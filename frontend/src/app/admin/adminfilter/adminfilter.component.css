@@ -1,0 +1,14 @@
+.color {
+  color: black;
+  border-radius: 10px;
+}
+
+.color1 {
+  background-color: #f84d4d;
+  color:white;
+  border-radius: 10px;
+}
+.color1:hover {
+  background-color: red;
+  transition: .5s;
+}

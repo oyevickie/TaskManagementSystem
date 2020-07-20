@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+ /*FontAwesome Link*/
+  @import "~@fortawesome/fontawesome-free/css/all.css";
+
+  .color{
+    background-color: #f7f7f7;
+  }

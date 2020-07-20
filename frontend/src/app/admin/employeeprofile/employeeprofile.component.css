@@ -1,0 +1,11 @@
+.scrool{
+  overflow: scroll;
+  height: 120%;
+  width: 100%;
+}
+#aa{
+  color: white;
+}
+.card {
+  margin-bottom: 20px;
+}

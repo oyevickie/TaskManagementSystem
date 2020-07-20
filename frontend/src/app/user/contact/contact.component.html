@@ -1,0 +1,40 @@
+
+<div style="margin-bottom: 10px;">
+  <nav class="navbar navbar-light border">
+    <a class="navbar-brand" style="font-weight: bold; font-size: 15px;"><span style="color: #4caf50!important">Contact Us</span></a>
+  </nav>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <form method="post"><!--Section heading-->
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+      <!--Section description-->
+      <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.
+        <br>Our team will come back to you within
+          a matter of hours to help you.</p>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="first_name"  [(ngModel)]="detail.email" disabled>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtEmail" class="form-control" placeholder="To Admin Email *" value="{{admin}}"  disabled/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtSubject" class="form-control" placeholder="Subject *"  [(ngModel)]="detail.subject" />
+                </div>
+                <div class="form-group">
+      <button class="btn btn-primary" type="submit" (click)="contact()" >Send</button>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea name="txtMsg" class="form-control" placeholder="Your Message *" [(ngModel)]="detail.message" style="width: 100%; height: 150px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>

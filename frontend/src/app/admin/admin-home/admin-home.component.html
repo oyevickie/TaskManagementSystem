@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row overflow-hidden">
+    <div class="col-md-2 fixed line">
+
+      <ul class="nav flex-column bright ">
+
+
+<!--  { path : '', component : AdminTasklistComponent },
+      { path : 'createtask', component: CreatetaskComponent },
+      { path : 'edittask', component: AdminEdittaskComponent },
+      { path : 'profiles', component : ProfileComponent },
+      { path : 'changepassword', component: ChangepassComponent },
+      { path : 'contactus', component: ContactComponent },
+      { path : 'employeeprofile', component: EmployeeprofileComponent },
+    ] -->
+
+        <li class="nav-item" style="border-bottom: 1px solid #dee2e6!important;">
+          <a routerLink="/task" routerLinkActive="active" class="nav-link active" href="#" ><i class="fa fa-user" aria-hidden="true"></i> &nbsp;Hi  {{ auth.getUserDetails()?.first_name }}</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/task/" routerLinkActive="active" class="nav-link active" href="#" ><i class="fa fa-tasks" aria-hidden="true"></i> &nbsp;Task list</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/task/createtask" routerLinkActive="active" class="nav-link active" href="#" ><i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;Create Task</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-check-square"></i> &nbsp;Complete Task</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-exclamation-circle"></i> &nbsp;Pending Task</a>
+        </li> -->
+        <li class="nav-item">
+          <a routerLink="/task/profiles" class="nav-link" href="#"><i class="fa fa-user-circle"></i> &nbsp;Profile</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/task/employeeprofile" class="nav-link"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Employee List</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/task/change_password" class="nav-link" href="#"  (click)="getdetails(details._id)" ><i class="fa fa-key"></i> &nbsp;Change Password</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/task/contactus" class="nav-link" href="#"><i class="fa fa-envelope"></i> &nbsp;Contact Us</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-10 boxx">
+<app-header></app-header>
+<br>
+      <div class=" box">
+        <router-outlet></router-outlet>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

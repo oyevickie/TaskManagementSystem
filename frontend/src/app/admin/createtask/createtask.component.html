@@ -1,0 +1,87 @@
+
+
+<br>
+<div style="margin-bottom: 10px;">
+  <nav class="navbar navbar-light border">
+    <a class="navbar-brand" style="font-weight: bold; font-size: 15px; ">Admin / <span style="color: #f44336;">TaskCreate</span></a>
+  </nav>
+</div>
+
+
+
+
+
+<section class="border">
+  <div class=" container">
+
+      <div class="">
+        <br>
+          <form class="register-form col-md-12"  (submit)="f.form.valid && createTask()" #f="ngForm"  novalidate>
+              <div class="row">
+                  <div class="col-md-6 ">
+                      <div class="form-group ">
+                          <label for="project" class="text-uppercase" >Project</label>
+                          <input type="text" class="form-control" name="project" [(ngModel)]="newTask.project" #project="ngModel"  [ngClass]="{'is-invalid': f.submitted && project.invalid}"   placeholder="Enter Project Name" required>
+                          <div *ngIf="f.submitted && project.invalid" class="invalid-feedback">
+                            <div *ngIf="project.errors.required">Project is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="Mobile" class="text-uppercase">Assigned to (Email or Username)</label>
+                          <input class="form-control mr-sm-2" list="empemail1" placeholder="Search" aria-label="Search"
+                          [(ngModel)]="newTask.email"
+                          name="email05" #email="ngModel"  [ngClass]="{'is-invalid': f.submitted && email.invalid}" required >
+
+                          <datalist id="empemail1">
+                            <option *ngFor = "let t of property"> {{t.email}}</option>
+                          </datalist>
+
+                          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">(Email or Username) is required</div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="LastName" class="text-uppercase">Task Name</label>
+                          <input type="text" class="form-control"
+                          [(ngModel)]="newTask.task_name"
+                          name="task_name" #task_name="ngModel"  [ngClass]="{'is-invalid': f.submitted && task_name.invalid}"  placeholder="Enter Task Name" required>
+                          <div *ngIf="f.submitted && task_name.invalid" class="invalid-feedback">
+                            <div *ngIf="task_name.errors.required">Task is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="AddressTwo" class="text-uppercase">Due Date</label>
+                          <input type="Date" class="form-control" name="date"  [(ngModel)]="newTask.date "
+                          id="'dateclick'"  placeholder="Pick Due Date" required>
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+
+                    <label for="details" class="text-uppercase">Details</label>
+                  <textarea rows="5" cols="151" name="comment" form="usrform" style="border-radius: 5px;"
+                  [(ngModel)]="newTask.Details" name="Details" #Details="ngModel"  [ngClass]="{'is-invalid': f.submitted && Details.invalid}"  placeholder="Enter Details" required></textarea>
+                  <div *ngIf="f.submitted && Details.invalid" class="invalid-feedback">
+                    <div *ngIf="Details.errors.required" >Details is required</div>
+                </div>
+
+                  </div>
+
+              </div>
+              <!-- <input  type="file" name="image" multiple (change)="selectImage($event)" (click)="view()"> -->
+
+              <br>
+              <div class="text-center">
+      <button class="btn btn-primary">{{id==''?'Create':'Update'}}</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-danger" (click)="clearTask()">Reset</button>
+
+
+              </div>
+              <br>
+              </form>
+
+
+      </div>
+  </div>
+</section>

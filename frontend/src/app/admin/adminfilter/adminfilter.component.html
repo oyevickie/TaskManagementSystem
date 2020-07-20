@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light light" style="background: #ffebee!important;">
+  <a class="navbar-brand">Filter</a>
+  <form class="form-inline">
+    <div class="form-group">
+      <nav>
+        <div class="nav navv" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link  color1" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" (click)="reload()" title="reload">Reload</a>&nbsp;&nbsp;
+          <a class="nav-item nav-link  color" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" routerLink="/task"  title="All Task" >All Tasks</a>&nbsp;&nbsp;
+          <a class="nav-item nav-link color" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" routerLink="/task/pendingtask"  title="Pending task">Pending Tasks</a>&nbsp;&nbsp;
+          <a class="nav-item nav-link color" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false" routerLink="/task/completetask"  title="Complete Task">Complete Tasks</a>
+        </div>
+      </nav>
+    </div>
+  </form>
+</nav>

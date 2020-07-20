@@ -1,0 +1,222 @@
+
+<div style="margin-bottom: 10px;">
+  <nav class="navbar navbar-light border">
+    <a class="navbar-brand" style="font-weight: bold; font-size: 15px;">Admin / <span style="color: red;">Tasks List / </span> <span style="color: green;">Complete Task</span></a>
+    <!-- <form> -->
+      <div  class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+      </div>
+    <!-- </form> -->
+  </nav>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+
+<div class="down">
+  <app-adminfilter></app-adminfilter>
+
+</div>
+
+<div class="scrool">
+
+<table class="table table-hover" style="font-size: 15px;">
+  <thead>
+    <tr class="" style="background: #ffebee!important">
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">Project</th>
+      <th  scope="col">Task Name</th>
+      <th scope="col">Assign To</th>
+      <th scope="col">Deadline</th>
+      <th scope="col">Status</th>
+      <th scope="col">Call to action buttons</th>
+    </tr>
+  </thead>
+
+  <tbody class="" style="line-height: 45px;">
+
+
+    <tr *ngFor = "let t of complete">
+      <!-- <td>1</td> -->
+      <td class="fw-600 ts">{{t.project}}</td>
+      <td class="fw-600">{{t.task_name}}</td>
+      <!-- <td>{{t.datee}}</td> -->
+      <td style="color: red;">{{t.email}}</td>
+      <td>{{t.date | date:'yyyy-MM-dd' }}</td>
+      <td class="fw-600">
+          <option>{{t.status}}</option>
+      </td>
+      <td>
+        <ul class="list-inline m-0">
+          <li class="list-inline-item">
+              <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="View Details"  (click)="viewTask(t._id)"  ><i class="fa fa-eye" aria-hidden="true"></i></button>
+          </li>
+            <li class="list-inline-item">
+                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"  (click)="setupDate(t)" data-toggle="modal" data-target="#exampleModal" ><i class="fa fa-edit"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="deleteTask(t._id)"><i class="fa fa-trash"></i></button>
+            </li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+
+
+
+</table>
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">View Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section class="border">
+          <div class=" container">
+
+              <div class="">
+                <br>
+                  <form class="register-form col-md-12" >
+                      <div class="row">
+                          <!-- <div class="col-md-6 "> -->
+                              <div class="form-group ">
+
+
+
+                                <table style="width: 100%;">
+                                  <tr>
+                                    <td class="right">Project :</td>
+                                    <td class="left">{{newTask.project}}</td>
+                                  </tr><br>
+                                  <tr>
+                                    <td  class="right">Task Name : </td>
+                                    <td  class="left">{{newTask.task_name}}</td>
+                                  </tr><br>
+                                  <tr>
+                                    <td  class="right">Email : </td>
+                                    <td  class="left"> {{newTask.email}}</td>
+                                  </tr><br>
+                                  <tr>
+                                    <td  class="right">Start Date : </td>
+                                    <td  class="left"> {{newTask.datee}}</td>
+                                  </tr><br>
+                                  <tr>
+                                    <td  class="right">Due Date : </td>
+                                    <td  class="left"> {{newTask.date}}</td>
+                                  </tr><br>
+                                  <tr>
+                                    <td  class="right">Details : </td>
+                                    <td  class="left"> {{newTask.Details}}</td>
+                                  </tr>
+                                  <tr>
+                                </table>
+
+                              </div><br>
+
+
+                      </div>
+                      <br>
+                      </form>
+              </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section class="border">
+            <div class=" container">
+
+                <div class="">
+                  <br>
+                    <form class="register-form col-md-12" >
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
+                                    <label for="project" class="text-uppercase" >Project</label>
+                                    <input type="text" class="form-control" name="project" [(ngModel)]="newTask.project">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="Mobile" class="text-uppercase">Assigned to (Email or Username)</label>
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                                    [(ngModel)]="newTask.email"
+                                    name="email" >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="LastName" class="text-uppercase">Task Name</label>
+                                    <input type="text" class="form-control"
+                                    [(ngModel)]="newTask.task_name"
+                                    name="task_name" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="AddressTwo" class="text-uppercase">Due Date</label>
+                                    <input type="Date" class="form-control"
+                                    id="'dateclick'"
+                                    >
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+
+                              <label for="details" class="text-uppercase">Details</label>
+                            <textarea rows="5" cols="151" name="comment" form="usrform" style="border-radius: 5px;"
+                            [(ngModel)]="newTask.Details" name="Details"></textarea>
+
+                            </div>
+                        </div>
+                        <br>
+                        </form>
+                </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"data-dismiss="modal" (click)="updateTask(id)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

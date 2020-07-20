@@ -1,0 +1,43 @@
+
+
+
+<div style="margin-bottom: 10px;">
+  <nav class="navbar navbar-light border">
+    <a class="navbar-brand" style="font-weight: bold; font-size: 15px;"><span style="color: #1976d2 !important;">Change Password</span></a>
+  </nav>
+</div>
+
+<div class="card">
+  <div class="card-body">
+      <div class="row">
+    <div class="col-12 col-sm-6 mb-3">
+      <div class="mb-2"><b>Change Password</b></div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label>New Password</label>
+            <input type="search" class="form-control" [(ngModel)]="taskData.password" name="task_name" placeholder="Enter new Password">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+            <input type="search" class="form-control" [(ngModel)]="taskData.confrimPassword" name="task_name"placeholder="Confirm Password" >
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col d-flex justify-content-end">
+      <button class="btn btn-primary" type="submit" (click)="updateTask()" >Save Changes</button>
+    </div>
+  </div>
+  </div>
+</div>

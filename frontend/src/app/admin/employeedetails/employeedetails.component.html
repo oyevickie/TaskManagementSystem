@@ -1,0 +1,27 @@
+
+
+
+<div class="card">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" style="font-weight: bold; font-size: 15px;"><a><i class="fa fa-arrow-circle-left " title="Back to task" style="cursor: pointer;" routerLink="/task/employeeprofile"></i></a> &nbsp;Admin</li>
+      <li class="breadcrumb-item active" aria-current="page" style="font-weight: bold; color: red; font-size: 15px;">Employee Details</li>
+    </ol>
+  </nav>
+
+  <div class="card-body" *ngIf="taskdata">
+    <div class="peer">
+      <small>@{{taskdata.username}}</small>
+      <h5 class="c-grey-900 mB-5">{{taskdata.first_name}} {{taskdata.last_name}}</h5>
+      <span>{{taskdata.email}}</span>
+    </div>
+    <hr>
+    <p>
+     <b> Date of Birth :- </b>{{taskdata.dob}} <br><br>
+     <b>Mobile No :- </b>{{taskdata.phone}}<br><br>
+     <b>Address :- </b>{{taskdata.address}}<br><br>
+      <b>Discription :- </b>{{taskdata.Bio}}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" style="font-weight: bold; font-size: 15px;"><a><i class="fa fa-arrow-circle-left" routerLink="/task"></i></a> &nbsp;Admin</li>
+      <li class="breadcrumb-item active" aria-current="page" style="font-weight: bold; color: red; font-size: 15px;">Task Details</li>
+    </ol>
+  </nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="card col-md-8">
+      <div class="card-body " *ngIf="taskdata">
+        <div class="peer">
+          <small>{{taskdata.date}}</small>
+          <h5 class="c-grey-900 mB-5"> {{taskdata.email}} </h5>
+
+            <p style="float: left;">from: Admin</p>
+            <p style="float: right; color: red;">{{taskdata.datee | date:'yyyy-MM-dd'}}</p>
+        </div>
+     <hr>
+
+     <table style="width: 100%;">
+      <tr>
+        <td class="right"><b>Project :</b></td>
+        <td class="left">{{taskdata.project}}</td>
+      </tr><br>
+      <tr>
+        <td  class="right"><b>Task Name :</b> </td>
+        <td  class="left">{{taskdata.task_name}}</td>
+      </tr><br>
+      <tr>
+        <td  class="right" style="color: red;"><b>Due Date :</b> </td>
+        <td  class="left"> {{taskdata.date | date:'yyyy-MM-dd'}}</td>
+      </tr><br>
+      <tr>
+        <td  class="right"><b>Details :</b> </td>
+        <td  class="left"> {{taskdata.Details}}</td>
+      </tr><br>
+      <tr>
+        <td  class="right" style="color: red;"><b>Status :</b> </td>
+        <td  class="left"> {{taskdata.status}} <a href="#" data-toggle="modal" data-target="#exampleModal" >edit..</a></td>
+      </tr>
+      <tr>
+    </table>
+
+
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="card">
+        <h5 class="card-header text-center">Chats</h5>
+
+        <div >
+
+          <div>
+
+            <section class="form-elegant scrollbar-light-blue">
+
+                  <!--Body-->
+                <div class="card-body  " *ngFor="let obj of usercomment">
+                  <span id="small">{{obj.email}}</span><br>
+
+                  <div class="alert alert-info" role="alert" >
+                    <!-- This is a warning alert—check it out!  -->
+                    <p>{{obj.comment}}</p>
+                  </div>
+
+                  <p id="small">{{obj.date | date:'hh:mm:ss'}}</p>
+                  <p id="small1">{{obj.date | date:'yyyy-MM-dd'}}</p>
+
+                </div>
+            </section>
+
+            <div class="modal-footer ">
+              <form  (submit)="f.form.valid && updatecomment()" #f="ngForm" style="width: 100%;">
+                <div class="form-group">
+                   <button id="right" type="submit"style="float: right"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                   <!-- <input> -->
+                <div style="overflow: hidden; padding-right: .5em;">
+                  <input type="text" style="width: 100%;" id="left" class="form-control" name="comment" placeholder="Type your comments" [(ngModel)]="Update.comment" #comment="ngModel" [ngClass]="{'is-invalid': f.submitted && comment.invalid}"  required/>
+                  <div *ngIf="f.submitted && comment.invalid" class="invalid-feedback">
+                    <div *ngIf="comment.errors.required">comment is required</div>
+                </div>
+                </div>
+              </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Status</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section class="border">
+            <div class=" container">
+
+                <div class="">
+                  <br>
+                    <form class="register-form col-md-12" >
+                        <div class="row">
+                                <div class="form-group">
+                                  <select  [(ngModel)]="taskdata.status"
+                                  name="Status" #status="ngModel">
+                                    <option>{{pending}}</option>
+                                    <option>{{complete}}</option>
+                                  </select>
+                                </div>
+                        </div>
+                        <br>
+                        </form>
+                </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"data-dismiss="modal" (click)="updateTask()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

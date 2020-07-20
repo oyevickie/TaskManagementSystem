@@ -1,0 +1,82 @@
+.login-box {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  vertical-align: middle;
+  height: min-content;
+
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+hr.hrColor {
+  border-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.heading h6 {
+  color: #efefef;
+}
+
+.loginForm {
+  text-align: center;
+  padding: 0px;
+}
+
+.loginForm span {
+  color: black;
+  font-size: 14px;
+  float: left;
+}
+
+.loginForm input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #cecece;
+  padding: 0px;
+  transition: all 0.1s;
+  margin-bottom: 8px;
+  color: black;
+  font-size: 14px;
+}
+
+.loginForm input[type="submit"] {
+  width: 100%;
+  background: blue;
+  border: transparent;
+  transition: all 0.1s;
+  padding: 6px;
+}
+
+
+.registerBtn {
+  border: 1px solid #cecece;
+  color: #cecece;
+  padding: 8px !important;
+  width: 100%;
+  display: block;
+  transition: all 0.2s;
+}
+
+.registerBtn:hover {
+  border: 1px solid #00d2ff;
+  color: #00d2ff !important;
+  padding: 8px !important;
+  width: 100%;
+  display: block;
+}

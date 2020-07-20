@@ -1,0 +1,61 @@
+
+.badge {
+  position: relative;
+  top: -14px;
+  color: black;
+  border-radius: 29px;
+  background-color: yellow;
+}
+.badge1{
+
+  position: relative;
+  top: -14px;
+  color: black;
+  border-radius: 29px;
+  background-color: red;
+
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+
+}
+
+.dropdown-menu {
+  left: -355px !important;
+  border: 1px solid #f0eeee;
+  padding: 10px;
+
+  box-shadow: -1px 0px 8px #88888857;
+}
+.alert {
+  margin-bottom: 4px;
+}
+.dropdown-item {
+  padding: 6px 6px;
+}
+.btn-danger {
+  color: white;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.bg-light {
+  background-color: #343a3f !important;
+}
+
+.btn1{
+  color: white;
+}
+.big{
+  border-radius: 6px !important;
+    background: transparent;
+    border: 1px solid;
+    padding-left: 15px;
+    padding-right: 25px;
+}

@@ -1,0 +1,63 @@
+
+  .form-control1 {
+    display: block;
+    width: 95%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: none;
+}
+
+.ts{
+
+  color: #000000ab;
+  font-weight: bold;
+}
+.container-fluid{
+  width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.high{
+  padding-top: 23px;
+}
+.down{
+  margin-bottom: 10px;
+}
+
+.scrool{
+  overflow: scroll !important;
+  height: 600px;
+  width: 100%;
+}
+
+.modal-dialog {
+  max-width: 1083px;
+  margin: 1.75rem auto;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+}
+
+.left {
+  padding-left: 30px;
+}
+
+.right {
+  font-weight: bolder;
+}
+
+#sel1{
+  background-color: orangered;
+  color: white;
+}

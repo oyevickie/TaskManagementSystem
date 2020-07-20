@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 line  fixed">
+
+      <ul class="nav flex-column bright ">
+
+        <li class="nav-item" style="border-bottom: 1px solid #dee2e6!important;">
+          <a routerLink="/user" routerLinkActive="active" class="nav-link active" href="#" ><i class="fa fa-user" aria-hidden="true"></i> &nbsp;Hi {{ auth.getUserDetails()?.first_name }}</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/user/" routerLinkActive="active" class="nav-link active" href="#" ><i class="fa fa-tasks" aria-hidden="true"></i> &nbsp;Tasks List</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/user/profile" class="nav-link" href="#"><i class="fa fa-user-circle"></i> &nbsp;Profile</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/user/change_password" class="nav-link" href="#" (click)="getdetails(details._id)"><i class="fa fa-key"></i> &nbsp;Change Password</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/user/notification" class="nav-link" href="#"><i class="fa fa-bell"></i> &nbsp;Notification</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/user/contact" class="nav-link" href="#"><i class="fa fa-envelope"></i> &nbsp;Contact Us</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-10 boxx">
+      <app-header></app-header>
+      <br>
+            <div class=" box">
+              <router-outlet></router-outlet>
+
+            </div>
+
+          </div>
+  </div>
+</div>
+

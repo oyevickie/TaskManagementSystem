@@ -1,0 +1,50 @@
+.line {
+  border-right: 1px solid #80808033;
+  background-color: #343a3f;
+}
+.nav-link{
+
+  line-height: 39px;
+  color: white;
+}
+
+.nav-link i {
+  font-size: 13px;
+}
+.fixed-top{
+  position: sticky;
+}
+.marginn{
+  margin-left: 17%;
+}
+
+.box {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  width: 100%;
+}
+.boxx {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+.fixed {
+  overflow: auto;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
